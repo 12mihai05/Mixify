@@ -13,6 +13,7 @@ body{
 .container{
   text-align: center;
   background-color: #121212;
+  height: 150vh;
 }
 
 .container h1{

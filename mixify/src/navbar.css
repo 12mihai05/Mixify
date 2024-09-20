@@ -1,14 +1,17 @@
 .nav{
     background-color: transparent;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
     padding: .25rem 1rem;
     position: sticky;
     z-index: 1000;
     top: 0;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav .site-title{
@@ -41,6 +44,7 @@
 }
 
 .log-in-button{
+    border: none;
     border-radius: 40px ;
     width: 110px;
     height: 30px;
@@ -77,6 +81,19 @@ svg:hover{
     display: none;
 }
 
+.menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    background-color: #282828;
+    opacity: 0; /* Start invisible */
+    transition: height 200ms ease-in, opacity 200ms ease-in;
+    pointer-events: none; /* Prevent interaction when not visible */
+}
+
 @media screen and (max-width: 760px){
     .large{
     display: none;  
@@ -92,12 +109,59 @@ svg:hover{
         border: none;
     }
 
-    .menu{
-        height: 100vh;
-        background-color: red;
-        display: flex;
-        flex-direction: row;
+    .menu.open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        height: 30rem;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
     }
 
+    .menu ul{
+        padding: 0;
+        margin: 5rem 0;
+        list-style: none;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        align-items: center;
+    }
+    
+    .menu ul a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.5em;
+        font-weight: 600;
+        padding: 2rem;
+        width: 80%;
+    }
 
+    .menu ul a.active{
+        color: white;
+    }
+    
+    .menu ul a:hover{
+        color: #1DB954;
+    }
+
+    .top-side{
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 1.5rem;
+    }
+
+    .menu-line{
+        width: 80vw;
+        height: 1px;
+        background-color: #B3B3B3;
+        margin-left: 10vw;
+    }
+
+    .menu-features{
+        border-top: #B3B3B3 solid 2px;
+        border-bottom: #B3B3B3 solid 2px;
+    }
 }
