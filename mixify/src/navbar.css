@@ -1,27 +1,30 @@
-.nav{
+
+
+.nav {
     background-color: transparent;
-    color: white;
+    color: var(--primary-text);
     padding: .25rem 1rem;
     position: sticky;
     z-index: 1000;
     top: 0;
 }
 
-.nav-container{
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
 
-.nav .site-title{
-    color: white;
+.nav .site-title {
+    color: var(--primary-text);
     text-decoration: none;
     font-weight: 600;
     font-size: larger;
+    flex: 1;
 }
 
-.nav ul{
+.nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -29,55 +32,65 @@
     gap: 15vw;
 }
 
-.nav li a{
-    color: #B3B3B3;
+.nav li a {
+    color: var(--secondary-text);
     text-decoration: none;
     padding: .5rem;
 }
 
-.nav li a.active{
-    color: white;
+.nav li a.active {
+    color: var(--primary-text);
 }
 
-.nav li a:hover{
-    color: #1DB954;
+.nav li a:hover {
+    color: var(--accent-color-1);
 }
 
-.log-in-button{
+.log-in-button {
     border: none;
-    border-radius: 40px ;
+    border-radius: 40px;
     width: 110px;
     height: 30px;
-    background-color: #17A44A;
-    color: white;
+    background-color: var(--accent-color-1);
+    color: var(--primary-text);
     cursor: pointer;
     transition: background-color ease-in-out 200ms;
 }
 
-.log-in-button:hover{
-    background-color: #1ED760;
+.log-in-button:hover {
+    background-color: var(--accent-color-2);
 }
 
-.right-nav{
+.right-nav {
     display: flex;
-    justify-content: center;
+    flex: 1;
+    justify-content: end;
     align-items: center;
     gap: 2rem;
 }
 
-svg:hover path{
-    fill: #17A44A;
+.theme{
+    max-width: 25px;
+    max-height: 25px;
 }
 
-svg:hover{
+svg path{
+    fill: var(--primary-text);
+}
+
+svg:hover path {
+    fill: var(--success-color);
+}
+
+svg:hover {
     cursor: pointer;
 }
 
-.scrolled{
-    background-color: #282828;
+.scrolled {
+    background-color: var(--tertiary-background);
 }
 
-.mobile-navbar{
+.mobile-navbar {
     display: none;
 }
 
@@ -88,23 +101,23 @@ svg:hover{
     right: 0;
     width: 100vw;
     height: 0;
-    background-color: #282828;
-    opacity: 0; /* Start invisible */
+    background-color: var(--tertiary-background);
+    opacity: 0;
     transition: height 200ms ease-in, opacity 200ms ease-in;
-    pointer-events: none; /* Prevent interaction when not visible */
+    pointer-events: none;
 }
 
-@media screen and (max-width: 760px){
-    .large{
-    display: none;  
+@media screen and (max-width: 760px) {
+    .large {
+        display: none;
     }
     
-    .mobile-navbar{
+    .mobile-navbar {
         display: flex;
         flex-direction: column;
     }
 
-    .menu-button{
+    .menu-button {
         background-color: transparent;
         border: none;
     }
@@ -119,7 +132,7 @@ svg:hover{
         padding: 0;
     }
 
-    .menu ul{
+    .menu ul {
         padding: 0;
         margin: 5rem 0;
         list-style: none;
@@ -129,8 +142,8 @@ svg:hover{
         align-items: center;
     }
     
-    .menu ul a{
-        color: #ffffff;
+    .menu ul a {
+        color: var(--primary-text);
         text-decoration: none;
         font-size: 1.5em;
         font-weight: 600;
@@ -138,30 +151,44 @@ svg:hover{
         width: 80%;
     }
 
-    .menu ul a.active{
-        color: white;
+    .menu ul a.active {
+        color: var(--primary-text);
     }
     
-    .menu ul a:hover{
-        color: #1DB954;
+    .menu ul a:hover {
+        color: var(--accent-color-1);
     }
 
-    .top-side{
+    .top-side {
         display: flex;
         justify-content: space-between;
         gap: 2rem;
         margin: 1.5rem;
     }
 
-    .menu-line{
+    .menu-line {
         width: 80vw;
         height: 1px;
-        background-color: #B3B3B3;
+        background-color: var(--secondary-text);
         margin-left: 10vw;
     }
 
-    .menu-features{
-        border-top: #B3B3B3 solid 2px;
-        border-bottom: #B3B3B3 solid 2px;
+    .menu-features {
+        border-top: var(--secondary-text) solid 2px;
+        border-bottom: var(--secondary-text) solid 2px;
+    }
+
+    .toggle-menu {
+        border: var(--secondary-text) 2px solid;
+        border-radius: 10px;
+        min-width: 40px;
+    }
+
+    .toggle-menu:hover {
+        border: var(--success-color) 2px solid;
+    }
+
+    .toggle-menu path{
+        stroke: var(--primary-text);
     }
 }

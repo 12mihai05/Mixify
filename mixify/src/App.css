@@ -1,23 +1,71 @@
-*{
+:root {
+    /* Dark theme variables */
+    --primary-background: #121212;
+    --secondary-background: #1E1E1E;
+    --tertiary-background: #282828;
+  
+    --tertiary-background-rgb: 40, 40, 40;
+  
+    --primary-text: #FFFFFF;
+    --secondary-text: #B3B3B3;
+  
+    --accent-color-1: #1DB954; /* Spotify Green */
+    --accent-color-2: #1ED760;
+  
+    --border-color: #333333;
+  
+    --error-color: #E22134;
+    --success-color: #21E27D;
+    --warning-color: #F1C40F;
+    --info-color: #0E7648;
+}
+
+[data-theme="light"] {
+    /* Light theme variables */
+    --primary-background: #FFFFFF;
+    --secondary-background: #F5F5F5;
+    --tertiary-background: #E0E0E0;
+  
+    --tertiary-background-rgb: 224, 224, 224;
+  
+    --primary-text: #191414;
+    --secondary-text: #666666;
+  
+    --accent-color-1: #1DB954; /* Spotify Green */
+    --accent-color-2: #1ED760;
+  
+    --border-color: #CCCCCC;
+  
+    --error-color: #E22134;
+    --success-color: #21E27D;
+    --warning-color: #F1C40F;
+    --info-color: #2D46B9;  
+}
+
+* {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-body{
-  margin: 0;
-  background-color: #121212;
+html {
+  scroll-behavior: smooth;
 }
 
-.container{
+body {
+  margin: 0;
+  background-color: var(--primary-background); /* Using primary background variable */
+}
+
+.container {
   text-align: center;
-  background-color: #121212;
+  background-color: var(--primary-background); /* Using primary background variable */
   height: 150vh;
 }
 
-.container h1{
+.container h1 {
   margin: 0;
   padding: 100px;
-  color: white;
+  color: var(--primary-text); /* Using primary text color */
 }
