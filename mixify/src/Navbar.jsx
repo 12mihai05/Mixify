@@ -1,63 +1,102 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import "./navbar.css"
 
 export default function Navbar(){
 
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+    const mobileDrawerOpenRef = useRef(mobileDrawerOpen);
     const [theme, setTheme] = useState(() => {
-        // Retrieve the saved theme from localStorage or default to 'dark'
         return localStorage.getItem('theme') || 'dark';
     });
 
     useEffect(() => {
         document.body.setAttribute('data-theme', theme);
-        // Call handleNavScroll to set the correct navbar background on theme change
-        handleNavScroll();
+        const container = document.querySelector('.container');
+        const navbar = document.querySelector(".nav");
+
+        if(window.innerWidth >= 760){
+            const rootStyles = getComputedStyle(document.body);
+            const bgColor = rootStyles.getPropertyValue('--tertiary-background').trim();
+            navbar.style.backgroundColor = `${bgColor}`;
+            handleNavScroll()
+        }
+    
+        if (mobileDrawerOpenRef.current ) {
+            const rootStyles = getComputedStyle(document.body);
+            const bgColor = rootStyles.getPropertyValue('--tertiary-background').trim();
+            navbar.style.backgroundColor = `${bgColor}`;
+            navbar.style.transition = "none";
+            container.style.filter = "brightness(0.5)";
+            container.style.pointerEvents = "none";
+            setTimeout(() => {
+                navbar.style.transition = "background-color 200ms ease-in";
+            }, 200);
+        }
     }, [theme]);
 
     const toggleTheme = () => {
         setTheme(prevTheme => {
             const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme); // Save the new theme to localStorage
+            localStorage.setItem('theme', newTheme);
             return newTheme;
         });
     };
 
+    console.log(window.innerWidth)
+
     const toggleNavbar = () => {
-        setMobileDrawerOpen(!mobileDrawerOpen);
-        const container = document.querySelector('.container')
-        if(mobileDrawerOpen){
-            container.style.filter = ""
-            container.style.pointerEvents = ""
-
-        }else{
-            container.style.filter = "brightness(0.5)"
-            container.style.pointerEvents = "none"
-        }
-      };
-
-      const handleNavScroll = () => {
+        const newDrawerState = !mobileDrawerOpen;
+        setMobileDrawerOpen(newDrawerState);
+    
+        const container = document.querySelector('.container');
         const navbar = document.querySelector(".nav");
-        const scrollY = window.scrollY;
-        const maxScroll = 60;
-        let opacity = scrollY / maxScroll;
+    
+        if (newDrawerState || window.innerWidth >= 760 ) {
+            const rootStyles = getComputedStyle(document.body);
+            const bgColor = rootStyles.getPropertyValue('--tertiary-background').trim();
+            navbar.style.transition = "background-color 200ms ease-in";
+            navbar.style.backgroundColor = `${bgColor}`;
+            container.style.filter = "brightness(0.5)";
+            container.style.pointerEvents = "none";
+        } else {
+            container.style.filter = "none";
+            container.style.pointerEvents = "auto";
+            handleNavScroll()
+            setTimeout(() => {
+                navbar.style.transition = "none";
+            }, 200);
+        }
+    };
 
-        if (opacity > 1) opacity = 1;
-        if (opacity < 0) opacity = 0;
+    const handleNavScroll = () => {
+        if(!mobileDrawerOpenRef.current || mobileDrawerOpen){
+            const navbar = document.querySelector(".nav");
+            const scrollY = window.scrollY;
+            const maxScroll = 60;
+            let opacity = scrollY / maxScroll;
 
-        const rootStyles = getComputedStyle(document.body);
-        const bgColorRgb = rootStyles.getPropertyValue('--tertiary-background-rgb').trim();
+            if (opacity > 1) opacity = 1;
+            if (opacity < 0) opacity = 0;
 
-        navbar.style.backgroundColor = `rgba(${bgColorRgb}, ${opacity})`;
+            const rootStyles = getComputedStyle(document.body);
+            const bgColorRgb = rootStyles.getPropertyValue('--tertiary-background-rgb').trim();
+
+            navbar.style.backgroundColor = `rgba(${bgColorRgb}, ${opacity})`; 
+        }
     };
 
     useEffect(() => {
-        window.addEventListener("scroll", handleNavScroll);
+        mobileDrawerOpenRef.current = mobileDrawerOpen;
+    }, [mobileDrawerOpen]);
 
-        return () => {
-            window.removeEventListener("scroll", handleNavScroll);
-        };
+    useEffect(() => {
+            window.addEventListener("scroll", handleNavScroll);
+
+            return () => {
+                window.removeEventListener("scroll", handleNavScroll);
+            };
+        
     }, []);
 
     return (<nav className="nav">
