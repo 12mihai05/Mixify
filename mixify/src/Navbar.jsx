@@ -51,10 +51,12 @@ export default function Navbar(){
     
         const container = document.querySelector('.container');
         const navbar = document.querySelector(".nav");
+        const toggleBtn = document.querySelector(".toggle-menu");
     
         if (newDrawerState || window.innerWidth >= 760 ) {
             const rootStyles = getComputedStyle(document.body);
             const bgColor = rootStyles.getPropertyValue('--tertiary-background').trim();
+            toggleBtn.style.border = "var(--secondary-text) 3px solid";
             navbar.style.transition = "background-color 200ms ease-in";
             navbar.style.backgroundColor = `${bgColor}`;
             container.style.filter = "brightness(0.5)";
@@ -62,6 +64,7 @@ export default function Navbar(){
         } else {
             container.style.filter = "none";
             container.style.pointerEvents = "auto";
+            toggleBtn.style.border = "var(--secondary-text) 2px solid";
             handleNavScroll()
             setTimeout(() => {
                 navbar.style.transition = "none";
