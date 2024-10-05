@@ -108,7 +108,7 @@ svg:hover {
     pointer-events: none;
 }
 
-@media screen and (max-width: 760px) {
+@media (max-width: 760px) {
     .large {
         display: none;
     }

@@ -1,3 +1,9 @@
+import About from "./sections/home/AboutHome.jsx"
+import CTA from "./sections/home/CTA.jsx"
+
 export default function Home(){
-    return <h1>Home</h1>
+    return (<>
+        <About/>
+        <CTA/>
+    </>)
 }

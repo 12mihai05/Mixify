@@ -1,0 +1,97 @@
+h1{
+    margin: 0;
+}
+
+/* About Section */
+
+.about-section{
+    width: 95%;
+    margin: 2em auto;
+    color: var(--primary-text);
+}
+
+.title{
+    font-size: var(--font-size-massive);
+    font-style: italic;
+}
+
+.title span{
+    font-style: italic;
+    color: var(--accent-color-1);
+}
+
+.paragraphs{
+    font-size: var(--font-size-xl);
+    color: var(--secondary-text);
+    width: 70%;
+    margin: 0 3rem;
+    text-align: justify;
+}
+
+.paragraphs b{
+        color: var(--accent-color-1);
+}
+
+.discover{
+    font-size: var(--font-size-xl);
+    /* font-weight: 600; */
+    margin: 0.75em 0;
+    padding: .3em 1.2em;
+    border: 2px solid var(--accent-color-1);
+    border-radius: 5rem;
+    background-color: transparent;
+    color: var(--accent-color-1);
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.discover:hover{
+    background-color: var(--accent-color-1);
+    color: var(--primary-background);
+}
+
+/* CTA Section */
+
+.CTA-section{
+    box-sizing: border-box;
+    font-size: var(--font-size-xxxl);
+    padding: 4em 0;
+    background: linear-gradient(to bottom, #1ED760, #1DB954);
+}
+
+.CTA-section .content{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.CTA-section .caption{
+    text-align: center;
+    color: var(--primary-text);
+    margin: 0 auto;
+    max-width: 20em;
+}
+
+.CTA-section button{
+    border: none;
+    border-radius: 5em;
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    background-color: var(--primary-text);
+    color: var(--primary-background);
+    padding: 0.75em 2.75em;
+    margin-top: 1.5em;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out, outline 200ms ease-in-out;
+}
+
+.CTA-section button:hover{
+    background-color: var(--accent-color-2);
+    outline: 3px solid var(--primary-background);
+}
+
+@media (max-width: 760px) {
+    .CTA-section{
+        font-size: var(--font-size-xl);
+    }
+}

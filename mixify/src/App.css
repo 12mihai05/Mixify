@@ -18,6 +18,30 @@
     --success-color: #21E27D;
     --warning-color: #F1C40F;
     --info-color: #0E7648;
+
+    --font-size-xxs: 0.625rem;  /* 10px */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-md: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-xxl: 1.5rem;    /* 24px */
+    --font-size-xxxl: 2rem;     /* 32px */
+    --font-size-huge: 2.5rem;   /* 40px */
+    --font-size-giant: 3rem;    /* 48px */
+    --font-size-massive: 5rem;  /* 80px */
+
+    --font-size-xxs-mobile: 0.5rem;   /* 8px */
+    --font-size-xs-mobile: 0.625rem;   /* 10px */
+    --font-size-sm-mobile: 0.75rem;    /* 12px */
+    --font-size-md-mobile: 0.875rem;   /* 14px */
+    --font-size-lg-mobile: 1rem;        /* 16px */
+    --font-size-xl-mobile: 1.125rem;    /* 18px */
+    --font-size-xxl-mobile: 1.25rem;    /* 20px */
+    --font-size-xxxl-mobile: 1.5rem;    /* 24px */
+    --font-size-huge-mobile: 2rem;      /* 32px */
+    --font-size-giant-mobile: 2.25rem;   /* 36px */
+    --font-size-massive-mobile: 4rem;   /* 64px */
 }
 
 [data-theme="light"] {
@@ -58,14 +82,31 @@ body {
   background-color: var(--primary-background); /* Using primary background variable */
 }
 
-.container {
+/* .container {
   text-align: center;
-  background-color: var(--primary-background); /* Using primary background variable */
+  background-color: var(--primary-background);
   height: 150vh;
-}
+} */
 
-.container h1 {
+/* .container h1 {
   margin: 0;
   padding: 100px;
-  color: var(--primary-text); /* Using primary text color */
+  color: var(--primary-text);
+} */
+
+
+@media (max-width: 760px) {
+  :root {
+    --font-size-xxs: var(--font-size-xxs-mobile);  /* 8px */
+    --font-size-xs: var(--font-size-xs-mobile);    /* 10px */
+    --font-size-sm: var(--font-size-sm-mobile);     /* 12px */
+    --font-size-md: var(--font-size-md-mobile);     /* 14px */
+    --font-size-lg: var(--font-size-lg-mobile);      /* 16px */
+    --font-size-xl: var(--font-size-xl-mobile);      /* 18px */
+    --font-size-xxl: var(--font-size-xxl-mobile);    /* 20px */
+    --font-size-xxxl: var(--font-size-xxxl-mobile);   /* 24px */
+    --font-size-huge: var(--font-size-huge-mobile);   /* 32px */
+    --font-size-giant: var(--font-size-giant-mobile);  /* 36px */
+    --font-size-massive: var(--font-size-massive-mobile); /* 64px */
+  }
 }
