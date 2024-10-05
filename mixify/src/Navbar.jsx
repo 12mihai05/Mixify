@@ -43,8 +43,6 @@ export default function Navbar(){
         });
     };
 
-    console.log(window.innerWidth)
-
     const toggleNavbar = () => {
         const newDrawerState = !mobileDrawerOpen;
         setMobileDrawerOpen(newDrawerState);

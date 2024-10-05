@@ -13,6 +13,8 @@
     --accent-color-2: #1ED760;
   
     --border-color: #333333;
+    --primary-shadow: rgba(0, 0, 0, 0.2);
+    
   
     --error-color: #E22134;
     --success-color: #21E27D;
@@ -59,6 +61,7 @@
     --accent-color-2: #1ED760;
   
     --border-color: #CCCCCC;
+    --primary-shadow: rgba(0, 0, 0, 0.3);
   
     --error-color: #E22134;
     --success-color: #21E27D;

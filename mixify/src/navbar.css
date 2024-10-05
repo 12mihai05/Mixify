@@ -72,13 +72,19 @@
 .theme{
     max-width: 25px;
     max-height: 25px;
+    transition: transform 0.3s ease;
 }
 
-svg path{
+.theme:active {
+    transform: scale(0.9) rotate(90deg);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme path{
     fill: var(--primary-text);
 }
 
-svg:hover path {
+.theme:hover path {
     fill: var(--success-color);
 }
 
@@ -185,15 +191,6 @@ svg:hover {
 
     svg:hover path {
         fill: var(--primary-text);
-    }
-
-    .theme{
-        transition: transform 0.3s ease;
-    }
-    
-    .theme:active {
-        transform: scale(0.9) rotate(90deg);
-        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
 }
