@@ -2,7 +2,7 @@ export default function CTA(){
 
     return (
         <div className="CTA-section">
-            <div className="content">
+            <div className="container">
                 <h1 className="caption">
                     Ready to enhance your Spotify experience?
                 </h1>

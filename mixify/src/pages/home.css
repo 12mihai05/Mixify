@@ -2,24 +2,30 @@ h1{
     margin: 0;
 }
 
+.title{
+    font-size: var(--font-size-massive);
+    font-style: italic;
+    color: var(--primary-text);
+}
+
 /* Features Section */
+
+.features-home{
+    margin-top: 4rem;
+}
 
 .grid-container {
     display: grid;
-    grid-template-columns: 13rem 7rem 13rem; /* Three columns of 10rem each */
-    grid-template-rows: 13rem 13rem;          /* Two rows of 10rem each */
+    grid-template-columns: 13em 7em 13em; /* Three columns of 10em each */
+    grid-template-rows: 13em 13em;          /* Two rows of 10em each */
     gap: 1rem; /* Space between items */
     justify-content: center; /* Center the grid horizontally */
     align-content: center;   /* Center the grid vertically */
+    margin: 2em 0;
 }
 
 .grid-item {
-    background-color: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-align: center;
+    color: var(--primary-text);
     border: 1px solid var(--border-color);
     border-radius: 0.4rem;
     box-shadow: 3px 3px 10px var(--primary-shadow);
@@ -49,13 +55,49 @@ h1{
     grid-row: 2 / 3;         /* In the second row */
 }
 
+.features-home .content{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.features-home .icon svg{
+    width: 2em;
+    height: 2em;
+}
+
+.features-home .caption{
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+}
+
+.features-home .paragraph{
+    font-size: var(--font-size-md);
+    width: 90%;
+    margin: 0 auto;
+    color: var(--secondary-text);
+}
+
+.features-home .arrow-icon{
+    align-self: flex-end;
+    align-content: flex-end;
+}
+
+.features-home .arrow-icon svg{
+    width: 1em;
+    height: 1em;
+}
+
 
 
 @media (max-width: 760px) {
     .grid-container {
         display: grid;
-        grid-template-columns: 5rem 5rem 5rem 5rem; /* 4 equal columns */
-        grid-template-rows: 10rem 10rem 10rem; /* Each row is 10rem high */
+        font-size: var(--font-size-md);
+        grid-template-columns: 5em 5em 5em 5em; /* 4 equal columns */
+        grid-template-rows: 10em 10em 10em; /* Each row is 10rem high */
         gap: 1rem;
     }
     
@@ -78,41 +120,57 @@ h1{
         grid-column: 1 / span 4; /* Spans all 4 columns */
         grid-row: 3 / 4;
     }
+
+    .features-home .caption{
+        font-size: var(--font-size-lg);
+    }
+
+    .features-home .paragraph{
+        font-size: var(--font-size-sm);
+    }
+
+    .features-home .content{
+        gap: 0.5em;
+        margin: 3% auto;
+    }
     
+}
+
+@media (max-width: 450px) {
+    .grid-container{
+        font-size: var(--font-size-sm);
+    }
 }
 
 /* About Section */
 
 .about-section{
     width: 95%;
-    margin: 2em auto;
+    margin: 0 auto;
+    margin-top: 8rem;
     color: var(--primary-text);
 }
 
-.title{
-    font-size: var(--font-size-massive);
-    font-style: italic;
-}
-
-.title span{
+.about-section .title span{
     font-style: italic;
     color: var(--accent-color-1);
 }
 
-.paragraphs{
+.about-section .paragraphs{
     font-size: var(--font-size-xl);
     color: var(--secondary-text);
     width: 90%;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 3em;
+    margin-bottom: 2em;
     text-align: justify;
 }
 
-.paragraphs b{
+.about-section .paragraphs b{
         color: var(--accent-color-1);
 }
 
-.discover{
+.about-section .discover{
     font-size: var(--font-size-xl);
     /* font-weight: 600; */
     margin: 0.75em 0;
@@ -125,7 +183,7 @@ h1{
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
 
-.discover:hover{
+.about-section .discover:hover{
     background-color: var(--accent-color-1);
     color: var(--primary-background);
 }
@@ -136,17 +194,12 @@ h1{
     box-sizing: border-box;
     font-size: var(--font-size-xxxl);
     padding: 3em 0;
+    margin-top: 8rem;
     background: linear-gradient(to bottom, #1ED760, #1DB954);
-}
-
-.CTA-section .content{
-    width: 90%;
-    margin: 0 auto;
     text-align: center;
 }
 
 .CTA-section .caption{
-    text-align: center;
     color: var(--primary-text);
     margin: 0 auto;
     max-width: 20em;
@@ -170,6 +223,11 @@ h1{
     outline: 3px solid var(--primary-background);
 }
 
+.cta-arrow{
+    width: 13%;
+    height: 13%;
+}
+
 .cta-arrow path{
     fill: var(--primary-background);
 }
@@ -184,5 +242,19 @@ h1{
     /* CTA Section */
     .CTA-section{
         font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 450px) {
+    .CTA-section{
+        font-size: var(--font-size-sm);
+    }
+
+    .title{
+        font-size: calc(var(--font-size-massive) - 90%);
+    }
+
+    .CTA-section button{
+        font-size: var(--font-size-md);
     }
 }

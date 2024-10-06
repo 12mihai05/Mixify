@@ -4,6 +4,7 @@ import "../../home.css"
 export default function AboutHome(){
     return (
         <div className="about-section">
+            <div className="container">
             <h1 className="title">
                 About <span>Mixify</span>
             </h1>
@@ -24,6 +25,7 @@ export default function AboutHome(){
                 <Link to="/about">
                 <button className="discover"> Discover More </button>
                 </Link>
+            </div>
             </div>
         </div>
     );
