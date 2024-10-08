@@ -186,13 +186,14 @@
         max-height: 30px;
         min-width: 40px;
         transition: border 100ms ease-in;
+        cursor: pointer;
     }
 
     .toggle-menu path{
         stroke: var(--primary-text);
     }
 
-    svg:hover path {
+    .theme:hover path {
         fill: var(--primary-text);
     }
     

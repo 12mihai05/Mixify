@@ -14,6 +14,11 @@ h1{
     margin-top: 4rem;
 }
 
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 13em 7em 13em; /* Three columns of 10em each */
@@ -21,7 +26,7 @@ h1{
     gap: 1rem; /* Space between items */
     justify-content: center; /* Center the grid horizontally */
     align-content: center;   /* Center the grid vertically */
-    margin: 2em 0;
+    margin-top: 2em;
 }
 
 .grid-item {
@@ -59,8 +64,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 1em;
-    width: 90%;
-    margin: 5% auto;
+    margin: 3%;
 }
 
 .features-home .icon svg{
@@ -88,6 +92,31 @@ h1{
 .features-home .arrow-icon svg{
     width: 1em;
     height: 1em;
+}
+
+.features-home .explore-btn{
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    text-align: center;
+    width: 70%;
+    max-width: 400px;
+    margin: 2em auto;
+    border: none;
+    border-radius: 5rem;
+    background-color: var(--accent-color-1);
+    color: var(--primary-background);
+    padding: 1.3em 2em;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+}
+
+.features-home .explore-btn:hover{
+    background-color: var(--accent-color-2);
+}
+
+.features-home .explore-arrow{
+    width: 7%;
+    height: 7%;
 }
 
 
@@ -131,7 +160,12 @@ h1{
 
     .features-home .content{
         gap: 0.5em;
-        margin: 3% auto;
+        margin: 3%;
+    }
+
+    .features-home .explore-btn{
+        font-size: var(--font-size-lg);
+        width: clamp(280px, 60%, 350px);
     }
     
 }
@@ -139,6 +173,11 @@ h1{
 @media (max-width: 450px) {
     .grid-container{
         font-size: var(--font-size-sm);
+    }
+
+    .features-home .explore-btn{
+        font-size: var(--font-size-md);
+        width: clamp(240px, 60%, 280px);
     }
 }
 
