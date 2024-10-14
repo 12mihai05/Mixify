@@ -73,6 +73,18 @@ body {
   background-color: var(--primary-background); /* Using primary background variable */
 }
 
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly dark background with transparency */
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+
 .container{
   width: 90%;
   max-width: 1200px;

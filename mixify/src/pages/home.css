@@ -8,7 +8,8 @@ h1{
     color: var(--primary-text);
 }
 
-/* Features Section */
+
+/* #region Features Section */
 
 .features-home{
     margin-top: 4rem;
@@ -63,8 +64,12 @@ h1{
 .features-home .content{
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    margin: 3%;
+    padding: 3%;
+    height: 100%;
+}
+
+.features-home .square{
+    padding: 4.9%;
 }
 
 .features-home .icon svg{
@@ -73,20 +78,29 @@ h1{
 }
 
 .features-home .caption{
-    font-size: var(--font-size-xxxl);
-    font-weight: bold;
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    margin-top: 2%;
 }
 
 .features-home .paragraph{
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     width: 90%;
     margin: 0 auto;
+    margin-top: 5%;
     color: var(--secondary-text);
 }
 
+.features-home .square .paragraph{
+    font-size: var(--font-size-sm);
+    width: 100%;
+    margin-top: 8.45%;
+}
+
 .features-home .arrow-icon{
-    align-self: flex-end;
-    align-content: flex-end;
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .features-home .arrow-icon svg{
@@ -97,6 +111,9 @@ h1{
 .features-home .explore-btn{
     font-size: var(--font-size-xxl);
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 0;
     text-align: center;
     width: 70%;
     max-width: 400px;
@@ -116,10 +133,12 @@ h1{
 
 .features-home .explore-arrow{
     width: 7%;
-    height: 7%;
+    align-self: center;
 }
 
-
+.features-home .explore-arrow path{
+    fill: var(--primary-background);
+}
 
 @media (max-width: 760px) {
     .grid-container {
@@ -150,29 +169,46 @@ h1{
         grid-row: 3 / 4;
     }
 
+    .features-home .square{
+        padding: 6.35%;
+    }
+
+    .features-home .icon svg{
+        width: 1.7em;
+        height: 1.7em;
+    }
+
     .features-home .caption{
         font-size: var(--font-size-lg);
+        margin: 0;
     }
 
     .features-home .paragraph{
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-xs);
+    }
+
+    .features-home .square .paragraph{
+        font-size: var(--font-size-xs);
     }
 
     .features-home .content{
-        gap: 0.5em;
-        margin: 3%;
+        padding: 3%;
     }
 
     .features-home .explore-btn{
         font-size: var(--font-size-lg);
         width: clamp(280px, 60%, 350px);
     }
-    
 }
 
 @media (max-width: 450px) {
     .grid-container{
         font-size: var(--font-size-sm);
+        margin: 0;
+    }
+
+    .features-home .square{
+        padding: 6.35%;
     }
 
     .features-home .explore-btn{
@@ -181,7 +217,131 @@ h1{
     }
 }
 
-/* About Section */
+/* #endregion */
+
+/* #region Get Started Section */
+
+.get-started-home{
+    margin-top: 4rem;
+}
+
+.get-started-home .right{
+    text-align: right;
+}
+
+.get-started-home .list-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.get-started-home .list-item{
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    box-shadow: 3px 3px 10px var(--primary-shadow);
+    background-color: var(--secondary-background);
+    width: 625px;
+}
+
+.get-started-home .right-list-item{
+    align-self: flex-end;
+}
+
+.get-started-home .left-list-item{
+    align-self: flex-start;
+}
+
+.get-started-home .content{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 100%;
+}
+
+.get-started-home .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.get-started-home .left-list-item .row{
+    justify-content: flex-start;
+}
+
+.get-started-home .icon{
+    align-self: center;
+    height: 9rem;
+    width: 11.55rem;
+    padding: 1em;
+    background-color: var(--tertiary-background);
+    border-top-right-radius: 0.94rem;
+    border-bottom-right-radius: 0.94rem;
+}
+
+.get-started-home .left-list-item .icon{
+    border-radius: 0;
+    border-top-left-radius: 0.94rem;
+    border-bottom-left-radius: 0.94rem;
+}
+
+.get-started-home .icon svg{
+    height: 100%;
+    width: 100%;
+}
+
+.get-started-home .caption{
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    margin-top: 2%;
+}
+
+.get-started-home .paragraph{
+    opacity: calc(0);
+    font-size: var(--font-size-sm);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3%;
+    color: var(--secondary-text);
+    transition: opacity 200ms ease-in-out;
+}
+
+.get-started-home .row:hover .paragraph{
+    opacity: calc(1);
+}
+
+@media (max-width: 760px) {
+    .get-started-home .list-item{
+        width: 400px;
+    }
+
+    .get-started-home .caption{
+        font-size: var(--font-size-lg);
+    }
+
+    .get-started-home .paragraph{
+        font-size: var(--font-size-xs);
+        opacity: calc(1);
+    }
+
+    .get-started-home .icon{
+        height: 8rem;
+        width: 9rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .get-started-home .list-item{
+        width: auto;
+    }
+}
+
+
+
+/* #endregion */
+
+/* #region About Section */
 
 .about-section{
     width: 95%;
@@ -211,7 +371,6 @@ h1{
 
 .about-section .discover{
     font-size: var(--font-size-xl);
-    /* font-weight: 600; */
     margin: 0.75em 0;
     padding: .3em 1.2em;
     border: 2px solid var(--accent-color-1);
@@ -227,7 +386,9 @@ h1{
     color: var(--primary-background);
 }
 
-/* CTA Section */
+/* #endregion */
+
+/* #region CTA Section */
 
 .CTA-section{
     box-sizing: border-box;
@@ -245,6 +406,8 @@ h1{
 }
 
 .CTA-section button{
+    display: flex;
+    justify-content: center;
     border: none;
     border-radius: 5em;
     font-size: var(--font-size-xxl);
@@ -253,6 +416,7 @@ h1{
     color: var(--primary-background);
     padding: 0.75em 2.75em;
     margin-top: 1.5em;
+    margin-inline: auto;
     cursor: pointer;
     transition: background-color 200ms ease-in-out, outline 200ms ease-in-out;
 }
@@ -265,6 +429,7 @@ h1{
 .cta-arrow{
     width: 13%;
     height: 13%;
+    align-self: center;
 }
 
 .cta-arrow path{
@@ -297,3 +462,5 @@ h1{
         font-size: var(--font-size-md);
     }
 }
+
+/* #endregion */
