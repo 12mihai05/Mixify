@@ -1,6 +1,3 @@
-h1{
-    margin: 0;
-}
 
 .title{
     font-size: var(--font-size-massive);
@@ -117,6 +114,10 @@ h1{
 .features-home .explore-arrow{
     width: 7%;
     height: 7%;
+}
+
+.features-home .explore-arrow path{
+    fill: var(--primary-background);
 }
 
 
