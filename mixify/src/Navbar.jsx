@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import "./navbar.css"
+import "./navigation.css"
 
 export default function Navbar(){
 

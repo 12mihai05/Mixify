@@ -1,9 +1,11 @@
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import Home from "./pages/Home.jsx";
-import Features from "./pages/Features.jsx";
-import About from "./pages/About.jsx";
-import "./App.css";
+import {Routes, Route} from "react-router-dom"
+import Navbar from "./Navbar"
+import Footer from "./Footer.jsx"
+import Home from "./pages/Home.jsx"
+import Features from "./pages/Features.jsx"
+import About from "./pages/About.jsx"
+import "./App.css"
+
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
         <Route path="/features" element={<Features />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </>
-  );
+    <Footer/>
+  </>
+  )
+  
 }
