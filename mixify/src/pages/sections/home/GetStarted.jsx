@@ -8,7 +8,7 @@ export default function GetStarted() {
             <div className="row">
               <div className="content">
                 <div className="caption">
-                  Sign Up and Connect Your Spotify Account
+                  Connect To Spotify Account
                 </div>
                 <div className="paragraph">
                   Choose between two tracks to build your perfect playlist.
@@ -58,7 +58,7 @@ export default function GetStarted() {
             <div className="row">
               <div className="content">
                 <div className="caption">
-                  Discover New Music Recommendations
+                  Discover New Music
                 </div>
                 <div className="paragraph">
                   Explore personalized recommendations to enhance your playlists
@@ -118,7 +118,7 @@ export default function GetStarted() {
                   <path
                     d="M61.8439 81.578L128.124 48.4378M128.156 141.578L61.9379 108.469M185 35C185 51.5685 171.569 65 155 65C138.431 65 125 51.5685 125 35C125 18.4315 138.431 5 155 5C171.569 5 185 18.4315 185 35ZM65 95C65 111.569 51.5685 125 35 125C18.4315 125 5 111.569 5 95C5 78.431 18.4315 65 35 65C51.5685 65 65 78.431 65 95ZM185 155C185 171.569 171.569 185 155 185C138.431 185 125 171.569 125 155C125 138.431 138.431 125 155 125C171.569 125 185 138.431 185 155Z"
                     stroke="#1DB954"
-                    stroke-width="9"
+                    strokeWidth="9"
                   />
                 </svg>
               </div>

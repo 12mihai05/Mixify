@@ -206,7 +206,7 @@
 /* #region Footer Section */
 
 .footer{
-    padding: 2em;
+    padding: 1.5em;
     background-color: var(--tertiary-background);
     color: var(--primary-text);
 }
@@ -214,11 +214,11 @@
 .footer .rows{
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    font-size: var(--font-size-md);
+    gap: 1em;
 }
 
 .footer .first-row{
-    font-size: var(--font-size-md);
     display: flex;
     justify-content: space-between;
 }
@@ -237,11 +237,35 @@
     gap: 5em;
 }
 
+.footer .second-row path{
+    fill: var(--secondary-text);
+}
+
 .footer .third-row{
     text-align: center;
     color: var(--secondary-text);
     font-size: var(--font-size-sm);
 }
+
+@media (max-width: 600px) {
+    .footer {
+      padding: 1em;
+    }
+
+    .footer .rows{
+        gap: 1em;
+        font-size: var(--font-size-xs);
+    }
+
+    .footer .second-row svg{
+        width: var(--font-size-md);
+    }
+
+    .footer .third-row{
+        font-size: var(--font-size-xxs);
+    }
+}
+  
 
 /* #endregion */
 

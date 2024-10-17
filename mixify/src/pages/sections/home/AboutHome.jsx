@@ -10,14 +10,14 @@ export default function AboutHome(){
             </h1>
 
             <div className="paragraphs">
-                <p>
+                <p className="about-animation">
                     <b>Mixify</b> transforms your Spotify experience with deeper 
                     insights and interactive tools. Our mission is to connect 
                     you with your music on a more personal level, making every 
                     track and playlist meaningful.
                 </p>
 
-                <p>
+                <p className="about-animation">
                     <b>Discover More:</b> Learn about our vision and 
                     how we’re changing the way you experience music.
                 </p>
