@@ -8,6 +8,7 @@
     position: sticky;
     z-index: 1000;
     top: 0;
+    flex: 1;
 }
 
 .nav-container {

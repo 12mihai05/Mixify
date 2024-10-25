@@ -38,8 +38,8 @@
     /* transform-style: preserve-3d; */
     transform: 
         perspective(1000px)
-        rotateX(var(--rotateX))
-        rotateY(var(--rotateY));
+        rotateX(100px)
+        rotateY(1000px);
 
 
         /* not working yet */
@@ -86,6 +86,7 @@
     font-size: var(--font-size-xxl);
     font-weight: 600;
     margin-top: 2%;
+    color: var(--primary-text);
 }
 
 .features-home .paragraph{
@@ -261,7 +262,7 @@
 @keyframes rightAnimation{
     from{
         opacity: calc(0);
-        transform: translateX(400px) ;
+        transform: translateX(100px) ;
     }
     to{
         opacity: calc(1);
@@ -278,7 +279,7 @@
 @keyframes leftAnimation{
     from{
         opacity: calc(0);
-        transform: translateX(-400px) ;
+        transform: translateX(-100px) ;
     }
     to{
         opacity: calc(1);

@@ -27,7 +27,6 @@ export default function Navbar(){
             const bgColor = rootStyles.getPropertyValue('--tertiary-background').trim();
             navbar.style.backgroundColor = `${bgColor}`;
             navbar.style.transition = "none";
-            container.style.filter = "brightness(0.5)";
             container.style.pointerEvents = "none";
             setTimeout(() => {
                 navbar.style.transition = "background-color 200ms ease-in";
