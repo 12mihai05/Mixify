@@ -1,58 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function FeaturesHome() {
+  const [isMouseInside, setIsMouseInside] = useState(false); // Track if the mouse is inside the grid item
+  const [isDesktop, setIsDesktop] = useState(false); // State to track if it's a desktop
 
-  // const item1 = document.querySelector(".item1");
+  useEffect(() => {
+    // Check if the device has no touch points (likely a desktop)
+    setIsDesktop(navigator.maxTouchPoints === 0);
 
-  // document.addEventListener("mousemove", (e) => {
-  //   rotateElement(e, item1);
-  // })
+    if (!isDesktop) return; // Skip further setup if not a desktop
 
-  // function rotateElement(event, element){
-  //   const x = event.clientX;
-  //   const y = event.clientY;
+    const items = document.querySelectorAll(".grid-item"); // Select all items
 
-  //   const middleX = window.innerWidth / 2;
-  //   const middleY = window.innerHeight / 2;
+    items.forEach((item) => {
+      const rect = item.getBoundingClientRect(); // Get bounding rect
 
-  //   const offsetX = ((x - middleX) / middleX) * 45;
-  //   const offsetY = ((y - middleY)  / middleY) * 45;
+      item.addEventListener("mousemove", (e) => {
+        rotateElement(e, item, rect);
+      });
 
-  //   element.style.setProperty("--rotateX", -1 * offsetY + "deg");
-  //   element.style.setProperty("--rotateY", offsetX + "deg");
-  // }
+      // Trigger when mouse enters the grid item
+      item.addEventListener("mouseenter", () => {
+        setIsMouseInside(true); // Mouse is inside the grid-item
+      });
 
+      // Trigger when mouse leaves the grid item
+      item.addEventListener("mouseleave", () => {
+        if (isMouseInside) {
+          item.style.setProperty("--rotateX", "0deg");
+          item.style.setProperty("--rotateY", "0deg");
+        }
+        setIsMouseInside(false); // Reset the flag
+      });
 
-
-  const items = document.querySelectorAll(".grid-item"); // Select all items
-
-  items.forEach(item => {
-    const rect = item.getBoundingClientRect(); // Get bounding rect
-
-    item.addEventListener("mousemove", (e) => {
-      rotateElement(e, item, rect);
+      // Trigger when mouse enters any child (like SVGs) of the grid item
+      item.addEventListener("mouseover", () => {
+        setIsMouseInside(true); // Mouse is still inside the grid-item
+      });
     });
+  }, [isDesktop]); // Run this effect only when `isDesktop` is determined
 
-    item.addEventListener("mouseout", () => {
-      // item.style.transition = "transform 2000ms ease-in-out";
-      item.style.setProperty("--rotateX", "0deg");
-      item.style.setProperty("--rotateY", "0deg");
-    });
-
-
-
-    // transition out smooth
-
-
-
-
-    item.addEventListener("mouseenter", () => {
-      item.style.transition = "transform 0.1s ease-in"; // Reset to a quick transition
-    });
-  });
-
-  function rotateElement(event, element, rect) {
+  function rotateElement(event, element) {
+    const rect = element.getBoundingClientRect();
     const x = event.clientX - rect.left; // x position within the element
     const y = event.clientY - rect.top;  // y position within the element
 
@@ -65,8 +55,6 @@ export default function FeaturesHome() {
     element.style.setProperty("--rotateX", -1 * offsetY + "deg");
     element.style.setProperty("--rotateY", offsetX + "deg");
   }
-  
-
 
   return (
     <div className="features-home">

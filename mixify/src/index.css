@@ -1,58 +1,101 @@
 :root {
-    /* Dark theme variables */
-    --primary-background: #121212;
-    --secondary-background: #1E1E1E;
-    --tertiary-background: #282828;
-  
-    --tertiary-background-rgb: 40, 40, 40;
-  
-    --primary-text: #FFFFFF;
-    --secondary-text: #B3B3B3;
-  
-    --accent-color-1: #1DB954; /* Spotify Green */
-    --accent-color-2: #1ED760;
-  
-    --border-color: #333333;
-    --primary-shadow: rgba(0, 0, 0, 0.15);
-    
-  
-    --error-color: #E22134;
-    --success-color: #21E27D;
-    --warning-color: #F1C40F;
-    --info-color: #0E7648;
+  /* Dark theme variables */
+  --primary-background: #121212;
+  --secondary-background: #1e1e1e;
+  --tertiary-background: #282828;
 
-    --font-size-xxs: clamp(0.5rem, 0.4rem + 1vw, 0.625rem);   /* Scales between 8px and 10px */
-    --font-size-xs: clamp(0.625rem, 0.5rem + 1vw, 0.75rem);   /* Scales between 10px and 12px */
-    --font-size-sm: clamp(0.75rem, 0.625rem + 1vw, 0.875rem); /* Scales between 12px and 14px */
-    --font-size-md: clamp(0.875rem, 0.75rem + 1vw, 1rem);     /* Scales between 14px and 16px */
-    --font-size-lg: clamp(1rem, 0.875rem + 1.5vw, 1.125rem);  /* Scales between 16px and 18px */
-    --font-size-xl: clamp(1.125rem, 1rem + 1.5vw, 1.25rem);   /* Scales between 18px and 20px */
-    --font-size-xxl: clamp(1.25rem, 1.125rem + 1.5vw, 1.5rem);/* Scales between 20px and 24px */
-    --font-size-xxxl: clamp(1.5rem, 1.25rem + 2vw, 2rem);     /* Scales between 24px and 32px */
-    --font-size-huge: clamp(2rem, 1.75rem + 2vw, 2.5rem);     /* Scales between 32px and 40px */
-    --font-size-giant: clamp(2.25rem, 2rem + 2vw, 3rem);      /* Scales between 36px and 48px */
-    --font-size-massive: clamp(4rem, 3rem + 3vw, 5rem);       /* Scales between 64px and 80px */
+  --tertiary-background-rgb: 40, 40, 40;
+
+  --primary-text: #ffffff;
+  --secondary-text: #b3b3b3;
+
+  --accent-color-1: #1db954; /* Spotify Green */
+  --accent-color-2: #1ed760;
+
+  --border-color: #333333;
+  --primary-shadow: rgba(0, 0, 0, 0.15);
+
+  --error-color: #e22134;
+  --success-color: #21e27d;
+  --warning-color: #f1c40f;
+  --info-color: #0e7648;
+
+  --font-size-xxs: clamp(
+    0.5rem,
+    0.4rem + 1vw,
+    0.625rem
+  ); /* Scales between 8px and 10px */
+  --font-size-xs: clamp(
+    0.625rem,
+    0.5rem + 1vw,
+    0.75rem
+  ); /* Scales between 10px and 12px */
+  --font-size-sm: clamp(
+    0.75rem,
+    0.625rem + 1vw,
+    0.875rem
+  ); /* Scales between 12px and 14px */
+  --font-size-md: clamp(
+    0.875rem,
+    0.75rem + 1vw,
+    1rem
+  ); /* Scales between 14px and 16px */
+  --font-size-lg: clamp(
+    1rem,
+    0.875rem + 1.5vw,
+    1.125rem
+  ); /* Scales between 16px and 18px */
+  --font-size-xl: clamp(
+    1.125rem,
+    1rem + 1.5vw,
+    1.25rem
+  ); /* Scales between 18px and 20px */
+  --font-size-xxl: clamp(
+    1.25rem,
+    1.125rem + 1.5vw,
+    1.5rem
+  ); /* Scales between 20px and 24px */
+  --font-size-xxxl: clamp(
+    1.5rem,
+    1.25rem + 2vw,
+    2rem
+  ); /* Scales between 24px and 32px */
+  --font-size-huge: clamp(
+    2rem,
+    1.75rem + 2vw,
+    2.5rem
+  ); /* Scales between 32px and 40px */
+  --font-size-giant: clamp(
+    2.25rem,
+    2rem + 2vw,
+    3rem
+  ); /* Scales between 36px and 48px */
+  --font-size-massive: clamp(
+    4rem,
+    3rem + 3vw,
+    5rem
+  ); /* Scales between 64px and 80px */
 }
 
 [data-theme="light"] {
-    /* Light theme variables */
-    --primary-background: #FFFFFF;
-    --secondary-background: #f2f2f2;
-    --tertiary-background: #E0E0E0;
-  
-    --tertiary-background-rgb: 224, 224, 224;
-  
-    --primary-text: #191414;
-    --secondary-text: #666666;
-  
-    --accent-color-1: #1DB954; /* Spotify Green */
-    --accent-color-2: #1ED760;
-  
-    --border-color: #CCCCCC;
-    --primary-shadow: rgba(0, 0, 0, 0.15);
-  
-    --error-color: #E22134;
-    --success-color: #21E27D;
-    --warning-color: #F1C40F;
-    --info-color: #2D46B9;  
+  /* Light theme variables */
+  --primary-background: #ffffff;
+  --secondary-background: #f2f2f2;
+  --tertiary-background: #e0e0e0;
+
+  --tertiary-background-rgb: 224, 224, 224;
+
+  --primary-text: #191414;
+  --secondary-text: #666666;
+
+  --accent-color-1: #1db954; /* Spotify Green */
+  --accent-color-2: #1ed760;
+
+  --border-color: #cccccc;
+  --primary-shadow: rgba(0, 0, 0, 0.15);
+
+  --error-color: #e22134;
+  --success-color: #21e27d;
+  --warning-color: #f1c40f;
+  --info-color: #2d46b9;
 }

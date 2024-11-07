@@ -7,9 +7,7 @@ export default function GetStarted() {
           <div className="right-list-item list-item">
             <div className="row">
               <div className="content">
-                <div className="caption">
-                  Connect To Spotify Account
-                </div>
+                <div className="caption">Connect To Spotify Account</div>
                 <div className="paragraph">
                   Choose between two tracks to build your perfect playlist.
                 </div>
@@ -57,9 +55,7 @@ export default function GetStarted() {
           <div className="right-list-item list-item">
             <div className="row">
               <div className="content">
-                <div className="caption">
-                  Discover New Music
-                </div>
+                <div className="caption">Discover New Music</div>
                 <div className="paragraph">
                   Explore personalized recommendations to enhance your playlists
                   with new and trending tracks.
