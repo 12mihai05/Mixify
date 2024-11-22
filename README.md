@@ -2,6 +2,10 @@
 
 **Mixify** is a modern web app built with **React** and **Vite**, designed to enhance your Spotify experience. With a sleek, responsive UI and seamless integration with the Spotify API, Mixify provides users with intuitive features to explore, manage, and interact with their music like never before.
 
+### Hosted on Firebase
+Mixify is hosted on Firebase, providing fast, secure, and scalable performance. You can access the web app at the following link:  
+[https://mixify-4fa70.web.app/](https://mixify-4fa70.web.app/)
+
 ## Features
 
 ### Current Frontend
@@ -20,6 +24,9 @@ The app's current functionality includes:
 - The app is fully optimized for devices of all sizes, dynamically adapting its layout to ensure an intuitive user experience.  
 - Grids seamlessly adjust between different configurations.
 - Font sizes use CSS variables for fluid scaling across resolutions.
+
+### Light Mode & Dark Mode
+Mixify features both **light mode** and **dark mode** interfaces. The app dynamically switches between these modes based on user preferences, using CSS variables to define colors for each theme. This ensures a consistent and smooth user experience across different lighting conditions.
 
 ### Planned Features
 The roadmap includes:
